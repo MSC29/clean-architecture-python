@@ -1,3 +1,4 @@
+from typing import Dict, Optional
 from dotenv import dotenv_values
 
 from src.domain.configuration_entity import ConfigurationEntity
@@ -5,7 +6,7 @@ from src.domain.configuration_entity import ConfigurationEntity
 
 class ConfigurationMapper:
     def __init__(self) -> None:
-        config_raw = dotenv_values(".env")
+        config_raw: Dict[str, Optional[str]] = dotenv_values(".env")
 
         dog_source = config_raw.get("DOGS_SOURCE")
         cat_source = config_raw.get("CATS_SOURCE")

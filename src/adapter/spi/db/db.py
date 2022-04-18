@@ -11,11 +11,13 @@ class DbConnection:
 
             self.__migration()
         except Exception as error:
-            raise ApiException(str(error))
+            raise ApiException("error initializing connection to DB: {}".format(str(error))) from error
 
     def __migration(self):
         try:
-            self.cur.execute('''CREATE TABLE IF NOT EXISTS dog_facts (id INTEGER PRIMARY KEY AUTOINCREMENT, fact TEXT)''')
-            self.cur.execute("INSERT INTO dog_facts (fact) VALUES ('a fact'), ('another fact'), ('yet another fact')")
+            self.cur.execute(
+                '''CREATE TABLE IF NOT EXISTS dog_facts (id INTEGER PRIMARY KEY AUTOINCREMENT, fact TEXT)''')
+            self.cur.execute(
+                "INSERT INTO dog_facts (fact) VALUES ('a fact'), ('another fact'), ('yet another fact')")
         except Exception as error:
-            raise ApiException(error)
+            raise ApiException("error running migration to DB: {}".format(str(error))) from error

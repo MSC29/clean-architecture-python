@@ -6,7 +6,7 @@ HttpObj = TypeVar("HttpObj")
 
 
 class HttpMapper(ABC):
-    
+
     @abstractmethod
     def to_http(self, entity: Entity) -> HttpObj:
         """Map an Entity to an http object"""

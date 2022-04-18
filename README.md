@@ -26,7 +26,7 @@ using setup.cfg to centralise all the config
 
 ```bash
 autopep8 -i -r --global-config=setup.cfg ./src
-pylint --rcfile=setup.cfg
-flake8 --config=setup.cfg
-mypy --config-file=setup.cfg
+pylint --rcfile=setup.cfg ./src
+flake8 --config=setup.cfg ./src
+mypy --config-file=setup.cfg ./src
 ```
