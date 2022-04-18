@@ -31,7 +31,7 @@ class CatFactRepository(CatFactRepositoryAbstract):
             raise ApiException("couldn't process json response")
 
         facts: typing.List[CatFactEntity] = []
-        for data in res_json:
+        for data in res_json["data"]:
             facts.append(self.mapper.to_entity(data))
 
         return facts
