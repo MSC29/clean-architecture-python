@@ -6,6 +6,7 @@ A Clean Archtiecture template for a Rest API in python
 
 TODO: proper doc & link to Rust & TypeScript repo
 TODO: documenting key interfaces & classes for clearer understanding & to evidence benefits of Clean Architecture
+TODO: github actions & badges
 
 # Dev
 
