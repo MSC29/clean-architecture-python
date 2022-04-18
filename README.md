@@ -2,6 +2,10 @@
 
 A Clean Archtiecture template for a Rest API in python
 
+# How it works
+
+TODO: proper doc & link to Rust & TypeScript repo
+
 # Dev
 
 ### Installing
@@ -30,3 +34,7 @@ pylint --rcfile=setup.cfg ./src
 flake8 --config=setup.cfg ./src
 mypy --config-file=setup.cfg ./src
 ```
+
+### Testing
+
+TODO
