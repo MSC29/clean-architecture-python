@@ -16,9 +16,9 @@ router = APIRouter()
 @router.get("/")
 async def get_all_cat_facts(factory: RepositoriesFactory = Injected(RepositoriesFactory)):
     repo: CatFactRepositoryAbstract = factory.get_repository("cat_fact_repository")
-    usecase: GetAllCatFactUseCase = GetAllCatFactUseCase(repo)
     mapper: CatFactPresenterMapper = CatFactPresenterMapper()
 
+    usecase: GetAllCatFactUseCase = GetAllCatFactUseCase(repo)
     cat_facts = usecase.execute()
 
     facts: typing.List[CatFactPresenter] = []
@@ -31,9 +31,9 @@ async def get_all_cat_facts(factory: RepositoriesFactory = Injected(Repositories
 @router.get("/random")
 async def get_one_random_cat_fact(factory: RepositoriesFactory = Injected(RepositoriesFactory)):
     repo: CatFactRepositoryAbstract = factory.get_repository("cat_fact_repository")
-    usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(repo)
     mapper: CatFactPresenterMapper = CatFactPresenterMapper()
 
+    usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(repo)
     cat_fact = usecase.execute()
 
     return mapper.to_api(cat_fact)
