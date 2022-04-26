@@ -5,3 +5,5 @@ fastapi-injector==0.1.2
 requests==2.27.1
 types-requests==2.27.19
 python-dotenv==0.20.0
+pytest==7.1.2
+vcrpy==4.1.1

@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from injector import Injector, SingletonScope
 from fastapi_injector import attach_injector
 
-from src.adapter.api.cat_fact import controllers as cat_facts_controller
+from src.adapter.api.cat_facts import controllers as cat_facts_controller
 from src.adapter.api.dog_facts import controllers as dog_facts_controller
 from src.adapter.spi.db.db import DbConnection
 from src.adapter.spi.http.http import HttpConnection
