@@ -24,8 +24,10 @@ pip install -r requirements.txt
 
 ### Running
 
+define the environment on which we're running by adding `ENV=<env>`, which will use the `.env.<env>` file
+
 ```bash
-python main.py
+ENV=dev python main.py
 ```
 
 ### Code quality
@@ -42,5 +44,5 @@ mypy --config-file=setup.cfg ./src
 ### Testing
 
 ```bash
-pytest
+ENV=test pytest
 ```

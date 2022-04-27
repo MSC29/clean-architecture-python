@@ -1,4 +1,5 @@
 
+import os
 from fastapi import FastAPI
 from injector import Injector, SingletonScope
 from fastapi_injector import attach_injector
@@ -11,7 +12,7 @@ from src.adapter.spi.repositories_factory import RepositoriesFactory
 from src.domain.configuration_entity import ConfigurationEntity
 from src.infrastructure.config_mapper import ConfigurationMapper
 
-config: ConfigurationEntity = ConfigurationMapper().get_config()
+config: ConfigurationEntity = ConfigurationMapper(os.getenv("ENV", "dev")).get_config()
 db_connection: DbConnection = DbConnection(config)
 http_connection: HttpConnection = HttpConnection()
 repositories_factory = RepositoriesFactory(config, db_connection, http_connection)
