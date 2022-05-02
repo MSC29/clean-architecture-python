@@ -7,7 +7,7 @@ from tests.integration_tests.response_utils import ResponseUtils
 
 class TestCatFacts:
 
-    CAT_URL = 'http://localhost:8080/cats/'
+    CAT_URL = 'http://localhost:8080/api/v1/cats/'
 
     @vcr.use_cassette('tests/integration_tests/fixtures/vcr_cassettes/cat_facts_facts.yaml')
     def test_should_return_multiple_results(self):

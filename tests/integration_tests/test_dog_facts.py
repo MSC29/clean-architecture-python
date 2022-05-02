@@ -7,7 +7,7 @@ from tests.integration_tests.response_utils import ResponseUtils
 
 class TestDogFacts:
 
-    DOG_URL = 'http://localhost:8080/dogs/'
+    DOG_URL = 'http://localhost:8080/api/v1/dogs/'
 
     @pytest.mark.usefixtures("setup_db")
     def test_should_return_multiple_results(self):

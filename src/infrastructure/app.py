@@ -21,8 +21,8 @@ repositories_factory = RepositoriesFactory(config, db_connection, http_connectio
 def create_app(injector: Injector) -> FastAPI:
     app: FastAPI = FastAPI()
 
-    app.include_router(dog_facts_controller.router, prefix="/dogs", tags=["dogs"])
-    app.include_router(cat_facts_controller.router, prefix="/cats", tags=["cats"])
+    app.include_router(dog_facts_controller.router, prefix="/api/v1/dogs", tags=["dogs"])
+    app.include_router(cat_facts_controller.router, prefix="/api/v1/cats", tags=["cats"])
 
     injector.binder.bind(RepositoriesFactory, to=repositories_factory, scope=SingletonScope)
 
