@@ -5,7 +5,7 @@ from src.application.utils.error_handling_utils import ErrorHandlingUtils
 from src.domain.cat_fact import CatFactEntity
 
 
-class GetAllCatFactUseCase(UseCaseMultipleEntities):
+class GetAllCatFactsUseCase(UseCaseMultipleEntities):
     def __init__(self, repo: CatFactsRepositoryAbstract) -> None:
         self.repo = repo
 

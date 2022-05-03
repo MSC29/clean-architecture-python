@@ -5,7 +5,7 @@ from src.application.utils.error_handling_utils import ErrorHandlingUtils
 from src.domain.dog_fact import DogFactEntity
 
 
-class GetAllDogFactUseCase(UseCaseMultipleEntities):
+class GetAllDogFactsUseCase(UseCaseMultipleEntities):
     def __init__(self, repo: DogFactsRepositoryAbstract) -> None:
         self.repo = repo
 

@@ -6,7 +6,7 @@ from src.domain.api_exception import ApiException
 from src.domain.cat_fact import CatFactEntity
 
 
-class CatFactRepository(CatFactsRepositoryAbstract):
+class CatFactsRepository(CatFactsRepositoryAbstract):
     def __init__(self, http_connection: HttpConnection, source: str) -> None:
         self.mapper = CatFactHttpMapper()
         self.source = source
