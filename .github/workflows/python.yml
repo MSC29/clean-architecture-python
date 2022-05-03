@@ -12,64 +12,15 @@ jobs:
         with:
           python-version: "3.9"
           cache: "pip"
-      - run: pip install -r requirements.txt
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    needs: [install]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "pip"
-      - run: ENV=test pytest --cov=src
-
-  autopep8:
-    name: autopep8
-    runs-on: ubuntu-latest
-    needs: [test]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "pip"
-      - run: autopep8 -i -r --global-config=setup.cfg ./src
-
-  pylint:
-    needs: [test]
-    name: pylint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "pip"
-      - run: pylint --rcfile=setup.cfg ./src
-
-  flake8:
-    needs: [test]
-    name: flake8
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "pip"
-      - run: flake8 --config=setup.cfg ./src
-
-  mypy:
-    needs: [test]
-    name: mypy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "pip"
-      - run: mypy --config-file=setup.cfg ./src
+      - name: install
+        run: pip install -r requirements.txt
+      - name: pytest
+        run: ENV=test pytest --cov=src
+      - name: autopep8
+        run: autopep8 -i -r --global-config=setup.cfg ./src
+      - name: pylint
+        run: pylint --rcfile=setup.cfg ./src
+      - name: flake8
+        run: flake8 --config=setup.cfg ./src
+      - name: mypy
+        run: mypy --config-file=setup.cfg ./src
