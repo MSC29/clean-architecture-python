@@ -11,7 +11,7 @@ class GetOneRandomCatFactUseCaseTest(unittest.TestCase):
     def test_should_raise_exception_when_unexpected_repo_exception(self):
         # given the "one random cat fact" usecase repo raising with an unexpected random exception
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_fact = MagicMock(side_effect=Exception("random exception"))
+        cat_fact_repository.get_random_cat_fact = MagicMock(side_effect=Exception("random exception"))
 
         # when calling usecase
         get_all_cat_facts_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(cat_fact_repository)
@@ -24,7 +24,7 @@ class GetOneRandomCatFactUseCaseTest(unittest.TestCase):
     def test_should_raise_exception_when_expected_repo_exception(self):
         # given the "one random cat fact" usecase repo raising with an expected ApiException
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_fact = MagicMock(side_effect=ApiException("exception in repo"))
+        cat_fact_repository.get_random_cat_fact = MagicMock(side_effect=ApiException("exception in repo"))
 
         # when calling usecase
         get_all_cat_facts_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(cat_fact_repository)
@@ -37,7 +37,7 @@ class GetOneRandomCatFactUseCaseTest(unittest.TestCase):
     def test_should_return_one_result(self):
         # given the "one random cat fact" usecase repo returning one result
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_fact = MagicMock(return_value=CatFactEntity("fact1", 1))
+        cat_fact_repository.get_random_cat_fact = MagicMock(return_value=CatFactEntity("fact1", 1))
 
         # when calling usecase
         get_all_cat_facts_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(cat_fact_repository)

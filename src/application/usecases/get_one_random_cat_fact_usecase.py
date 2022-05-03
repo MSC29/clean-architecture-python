@@ -10,6 +10,6 @@ class GetOneRandomCatFactUseCase(UseCaseOneEntity):
 
     def execute(self) -> CatFactEntity:
         try:
-            return self.repo.get_cat_fact()
+            return self.repo.get_random_cat_fact()
         except Exception as exception:
             raise ErrorHandlingUtils.application_error("Cannot get random cat fact", exception)
