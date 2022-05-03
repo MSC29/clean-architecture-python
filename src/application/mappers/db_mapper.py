@@ -1,16 +1,16 @@
 from abc import ABC, abstractmethod
-from typing import TypeVar
+from typing import Generic, TypeVar
 
 Entity = TypeVar("Entity")
 DbModel = TypeVar("DbModel")
 
 
-class DbMapper(ABC):
+class DbMapper(ABC, Generic[Entity, DbModel]):
 
     @abstractmethod
     def to_db(self, entity: Entity) -> DbModel:
-        """Map an Entity to a db model"""
+        """Map an Entity to a DbModel"""
 
     @abstractmethod
     def to_entity(self, db_obj: DbModel) -> Entity:
-        """Map a db model to an Entity"""
+        """Map a DbModel to an Entity"""

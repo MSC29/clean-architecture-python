@@ -12,7 +12,7 @@ class CatFactsRepository(CatFactsRepositoryAbstract):
         self.source = source
         self.http_connection = http_connection
 
-    def get_cat_fact(self) -> CatFactEntity:
+    def get_random_cat_fact(self) -> CatFactEntity:
         res = self.http_connection.get("{}/fact".format(self.source))
         if not res.ok:
             raise ApiException("couldn't retrieve random cat fact")
