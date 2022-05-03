@@ -1,0 +1,71 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-requests/2.27.1
+      method: GET
+      uri: https://localhost.test.cat.facts.wtf/facts
+    response:
+      body:
+        string: !!binary |
+          H4sIAAAAAAAAA6WWTYvjRhCG/0ohCLl4PZblsceGEEIgkMuyh1xCZlnaUsnqdatb9Md4xDL/PW+3
+          1pP2LiEZdBhhtaueeru+PF+KOljL2n8axImLQ7koGuFFcfjrS9GK2heH4o+OqZXWefI2MNXCOzx6
+          Jqm9IX6WzrOumcTRBE/lmnqplDSaRhbWkTgZErqhC1smD9YHa4RUwQa3LBaFYn3yXXHYly+L15C/
+          UMu9UCkYXYCjI9Ng+aSF9tQaS2IYrHmWvfCsRtqDzmdH+OLIHp81bdcp6vaeGjE6aq3pqTbQOfio
+          DcobVvKJ7ZirKMtVJuO3VxGOcMcmekGIlafO0yAu3Czo0kmY/GMncMve4GFauJDi9qvpkn7XHjlw
+          XuqTGq+e+9UPMKUu9EJP3hO+g/rIjxmz0CE13KicrCNVMsyVM7myKOPmOg/r7DqxkM5bo08QQbWS
+          /ZGRyR4HKcxRntIdFiQQwQzCNnjX+LN2jOkfyV8kKi1xzwsnmWGAsbd8E3a/uallLKLjKDd1yJa8
+          7PGGSiEfiIwQYkoAwVJH7iIVTzM3jsrHu23SB6UB5cf9YwpSeDj7V+fGgPoO6pA8F+8gRvBhy8/e
+          CmSxVVzH7FPNSrlYgLqDKGfsceLd5G6X5+7XWNtGOiXPKLTEJDhyNeYmd1lvv/XoxNPU9ErYlHUe
+          oRGShB5RrR4FywGbfAj+NIHqjuszjSbYqbuGoBxaSyem1E42sdGm6glY+g7XiK11HTbFJ/psYBk7
+          JJmZZlzSe2MROk1S5B4Ijf+u3K1QlBQGeeulDv62m6rNt/fD6A8YUN+Bi0fqdoR0qW/1dDj1czyN
+          upL0kS5CneO42qDzELvvIvTB+SmNLUotk7u0KAV7iK1FcDwR0ak/YtSsaUJq0a9Zgq253MbYvnxc
+          FGmjpaX3KViFaJ33gzs83j3eISNRwRIT91k83sXP7udo+VMJTNwkaU8q4a5bs9pkr2/gVZuoS+qz
+          Sws3OeqgVKQdOVI+WH6SJjjYwQ37qji0mHqOafr/caLuK7HMUHGhv420zkjreaKqDFXNQ20y1GYe
+          6j5D3c9DbTPUdh5ql6F281APGephHmqfofbzUOUqb9HVv8Jup2O5XM4LW9004cwurPI2rGb2YT5o
+          7/ED9h0NO0zj/K0rJ3IHEffgf5hHO7bXfwtXeMMqyqJNlfBm+tIbL3BYVeuXvwEiTDoKUwoAAA==
+      headers:
+        Access-Control-Allow-Origin:
+          - "*"
+        Cache-Control:
+          - no-cache, private
+        Connection:
+          - keep-alive
+        Content-Encoding:
+          - gzip
+        Content-Type:
+          - application/json
+        Date:
+          - Tue, 26 Apr 2022 20:54:08 GMT
+        Server:
+          - nginx
+        Set-Cookie:
+          - XSRF-TOKEN=eyJpdiI6InU5K0VIQ3hJM0NjWkc4SklZOUk4dkE9PSIsInZhbHVlIjoia2srbDRvRDhOL0QwSEl1NldFK3RkVG5XR0hYRkdCNG9oc1U0M1pZdFp2V0k5WUhmWENCejNncUVaTXUzZDlvaFBLRWdNZHBDNGEyZmhkeTVTUVFkdzY4QXR4Yno1ZlB1ajVJNzQrdEJaZ283aGI2MTdNbm5rZHUxajNhQzcvNFAiLCJtYWMiOiJlOTliZTMxZjUzMDZmODk1MjIwMDRkZDAxMTkxNmQxMjgxNjlmYmRhZTU1NjM1YWI4M2MxMjZjM2Y0ODgxYTcxIiwidGFnIjoiIn0%3D;
+            expires=Tue, 26-Apr-2022 22:54:08 GMT; path=/; samesite=lax
+          - cat_facts_session=eyJpdiI6IndqWWdLdmRiUExDdVJ0aFRQdlBJcFE9PSIsInZhbHVlIjoia2ZGZ3NKRm52TTk3Vm1TYmdIVmVONEkzQWdGYXd2MjR6MVZxZG1KS0pJaTM1cllabndqYTB3YU8veVBKeEFMUFBidWQ1ZFZtSTZ4RG85VFVOaGNwb0lDZVdENm5XM3E1NDFENmM5bS9LQWphVURLVytNbVJ3a0t6cUhWNGswRk0iLCJtYWMiOiJhODZiZDEyYTAzMDM3ODA4OWJlMzU1YmMyNjNiOWFmYzFjOWNkNjZkZjQ4ODgzNmY1Y2IyZDE2ODQ3ZDdiZjc1IiwidGFnIjoiIn0%3D;
+            expires=Tue, 26-Apr-2022 22:54:08 GMT; path=/; httponly; samesite=lax
+        Transfer-Encoding:
+          - chunked
+        Vary:
+          - Accept-Encoding
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Ratelimit-Limit:
+          - "100"
+        X-Ratelimit-Remaining:
+          - "99"
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
+version: 1

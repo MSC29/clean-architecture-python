@@ -1,0 +1,60 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-requests/2.27.1
+      method: GET
+      uri: https://localhost.test.cat.facts.wtf/fact
+    response:
+      body:
+        string: !!binary |
+          H4sIAAAAAAAAA12PwWqEQBBEf6XwvIhmCcT9gMBes9e9tGOrjeOMzLQRCfn3tNkQQs5d9er1R9GT
+          0+JSXAN0ZNTNucon6BbxtuYsFNBK9HGQrBmdZBffOXFnYVI4uyS4kcLAkICb0MyZMYkqB8vzwqFD
+          /GZLQhu7Hcrzwol0TVz+NhwZ3lFKO8i3EiIGDpwfM1tMk0H8jm3kh+d/EiSDWnND83Jfq6qt8Fri
+          2h/hP0JkSc+9HrIE+8SQlGakGOfTj+QSJZjMFsN9farqRtFRmmyXwvE2W0W8R1YyV7jENB9iolwW
+          p8JzGHQsLuf6+fMLlGUjDV0BAAA=
+      headers:
+        Access-Control-Allow-Origin:
+          - "*"
+        Cache-Control:
+          - no-cache, private
+        Connection:
+          - keep-alive
+        Content-Encoding:
+          - gzip
+        Content-Type:
+          - application/json
+        Date:
+          - Tue, 26 Apr 2022 20:51:26 GMT
+        Server:
+          - nginx
+        Set-Cookie:
+          - XSRF-TOKEN=eyJpdiI6Ik13UFF2N0c0M01LMktTT00waVJZYXc9PSIsInZhbHVlIjoiTFdyc3pxdDhiVFM1SEQ2d2ljZlo4VVpqVytqaDBRNHVWeTlTa3ZBcDRNZDdEM0JUeWpBVUVscytpZFY1S2xwTFg2MzVmQzZzVjdIMzJjNHI2TGpQS29lR0RhRkhKdWIyeVhLT3NTQ0xOdmZReEJGWXZCL09PZTFtNy9DYWpZZ1IiLCJtYWMiOiIzNzc5NGRlM2QyNmE0MTY4NGVhZjExMGFmNTRlYjg1NmUyYzk1NDMxZTAyMmQ1ZWZjYTBjNDcyZDgxMzMzNjYzIiwidGFnIjoiIn0%3D;
+            expires=Tue, 26-Apr-2022 22:51:26 GMT; path=/; samesite=lax
+          - cat_facts_session=eyJpdiI6IlRaMGNtY3pneG53ZzFtMCtLenB6SEE9PSIsInZhbHVlIjoiUFhQdTNyV3dUeGU1TmZybzV1T0t1OWl2V2xVYncxTFBIL25uQzloZ1pkcW1jWmpzNFMxNWZla3A4NjIveXNDYzJjNE45aEZROTRZdHdjQ1doUUx5YWhQQkhjdFd0dXFUVW83em16Zi85YTNBbHNYeUx2M3N4dVBSS1BOaVQxRnQiLCJtYWMiOiI1NjMxYTNiNDRmMWY4ZWRhMWZlNmJlNjU5NDgyYjM3MDJkZTY1MGNjMGY5NDUwZTAxYzdlM2E2M2M3OWUwZmY0IiwidGFnIjoiIn0%3D;
+            expires=Tue, 26-Apr-2022 22:51:26 GMT; path=/; httponly; samesite=lax
+        Transfer-Encoding:
+          - chunked
+        Vary:
+          - Accept-Encoding
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Ratelimit-Limit:
+          - "100"
+        X-Ratelimit-Remaining:
+          - "99"
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: OK
+version: 1

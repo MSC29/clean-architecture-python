@@ -1,12 +1,16 @@
-from src.application.repositories.dog_fact_repository_abstract import DogFactRepositoryAbstract
+from src.application.repositories.dog_facts_repository_abstract import DogFactsRepositoryAbstract
 from src.application.usecases.interfaces import UseCaseOneEntity
+from src.application.utils.error_handling_utils import ErrorHandlingUtils
 from src.domain.dog_fact import DogFactEntity
 
 
-class GetOneRandomDogFactUseCase(UseCaseOneEntity):
-    def __init__(self, dog_fact_id: int, repo: DogFactRepositoryAbstract) -> None:
+class GetOneDogFactByIdUseCase(UseCaseOneEntity):
+    def __init__(self, dog_fact_id: int, repo: DogFactsRepositoryAbstract) -> None:
         self.repo = repo
         self.dog_fact_id = dog_fact_id
 
     def execute(self) -> DogFactEntity:
-        return self.repo.get_dog_fact_by_id(self.dog_fact_id)
+        try:
+            return self.repo.get_dog_fact_by_id(self.dog_fact_id)
+        except Exception as exception:
+            raise ErrorHandlingUtils.application_error("Cannot get single dog fact", exception)

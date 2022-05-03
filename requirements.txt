@@ -1,3 +1,4 @@
+# prod
 uvicorn==0.17.6
 fastapi==0.75.2
 requests==2.27.1
@@ -5,3 +6,12 @@ fastapi-injector==0.1.2
 requests==2.27.1
 types-requests==2.27.19
 python-dotenv==0.20.0
+
+# test
+vcrpy==4.1.1
+pytest==7.1.2
+pytest-cov==3.0.0
+autopep8==1.6.0
+pylint==2.13.8
+flake8==4.0.1
+mypy==0.950

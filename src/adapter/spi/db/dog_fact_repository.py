@@ -1,12 +1,12 @@
 import typing
 from src.adapter.spi.db.db import DbConnection
 from src.adapter.spi.db.mappers import DogFactDbMapper
-from src.application.repositories.dog_fact_repository_abstract import DogFactRepositoryAbstract
+from src.application.repositories.dog_facts_repository_abstract import DogFactsRepositoryAbstract
 from src.domain.api_exception import ApiException
 from src.domain.dog_fact import DogFactEntity
 
 
-class DogFactRepository(DogFactRepositoryAbstract):
+class DogFactRepository(DogFactsRepositoryAbstract):
     def __init__(self, db_connection: DbConnection) -> None:
         self.mapper = DogFactDbMapper()
         self.db_connection = db_connection
