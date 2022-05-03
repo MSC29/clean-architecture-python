@@ -3,6 +3,17 @@ on: [push, pull_request]
 name: Continuous integration
 
 jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+
   test:
     name: Test
     runs-on: ubuntu-latest
