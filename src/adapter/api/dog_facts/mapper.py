@@ -7,7 +7,7 @@ from src.domain.dog_fact import DogFactEntity
 class DogFactPresenterMapper(ApiMapper):
 
     def to_api(self, entity: DogFactEntity) -> DogFactPresenter:
-        return DogFactPresenter(entity.fact_id, entity.fact)
+        return DogFactPresenter(entity.fact_id, entity.fact_txt)
 
     def to_entity(self, payload: Any) -> DogFactEntity:
         raise Exception("not implemented")

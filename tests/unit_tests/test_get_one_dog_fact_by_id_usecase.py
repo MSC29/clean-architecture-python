@@ -45,4 +45,4 @@ class GetOneDogFactByIdUseCaseTest(unittest.TestCase):
 
         # then assert the result is the expected entity
         self.assertEqual(data.fact_id, 1)
-        self.assertEqual(data.fact, "fact1")
+        self.assertEqual(data.fact_txt, "fact1")
