@@ -38,8 +38,7 @@ async def get_one_random_cat_fact(factory: RepositoriesFactory = Injected(Reposi
         cat_fact_repository: CatFactsRepositoryAbstract = factory.get_repository("cat_fact_repository")
         cat_fact_presenter_mapper: CatFactPresenterMapper = CatFactPresenterMapper()
 
-        get_one_random_cat_fact_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(
-            cat_fact_repository)
+        get_one_random_cat_fact_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(cat_fact_repository)
         cat_fact = get_one_random_cat_fact_usecase.execute()
 
         return cat_fact_presenter_mapper.to_api(cat_fact)
