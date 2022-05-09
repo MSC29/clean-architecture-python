@@ -10,5 +10,5 @@ class CatFactsRepositoryAbstract(ABC):
         """Get random Fact"""
 
     @abstractmethod
-    def get_cat_facts(self) -> typing.List[CatFactEntity]:
+    def get_all_cat_facts(self) -> typing.List[CatFactEntity]:
         """Get a list of facts"""

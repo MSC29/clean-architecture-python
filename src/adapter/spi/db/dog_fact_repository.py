@@ -1,5 +1,5 @@
 import typing
-from src.adapter.spi.db.db import DbConnection
+from src.adapter.spi.db.db_connection import DbConnection
 from src.adapter.spi.db.mappers import DogFactDbMapper
 from src.application.repositories.dog_facts_repository_abstract import DogFactsRepositoryAbstract
 from src.domain.api_exception import ApiException

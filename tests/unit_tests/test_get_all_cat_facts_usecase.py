@@ -8,10 +8,10 @@ from src.domain.cat_fact import CatFactEntity
 
 
 class GetAllCatFactsUseCaseTest(unittest.TestCase):
-    def test_should_raise_exception_when_unexpected_repo_exception(self):
-        # given the "all cat facts" usecase repo raising with an unexpected random exception
+    def test_should_return_generic_message_when_unexpected_repo_exception(self):
+        # given the "all cat facts" usecase repo with an unexpected exception
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_facts = MagicMock(side_effect=Exception("random exception"))
+        cat_fact_repository.get_all_cat_facts = MagicMock(side_effect=Exception("random exception"))
 
         # when calling usecase
         get_all_cat_facts_usecase: GetAllCatFactsUseCase = GetAllCatFactsUseCase(cat_fact_repository)
@@ -21,10 +21,10 @@ class GetAllCatFactsUseCaseTest(unittest.TestCase):
             get_all_cat_facts_usecase.execute()
         self.assertEqual('Cannot get all cat facts', str(context.exception.message))
 
-    def test_should_raise_exception_when_expected_repo_exception(self):
+    def test_should_return_custom_message_when_expected_repo_exception(self):
         # given the "all cat facts" usecase repo raising with an expected ApiException
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_facts = MagicMock(side_effect=ApiException("exception in repo"))
+        cat_fact_repository.get_all_cat_facts = MagicMock(side_effect=ApiException("exception in repo"))
 
         # when calling usecase
         get_all_cat_facts_usecase: GetAllCatFactsUseCase = GetAllCatFactsUseCase(cat_fact_repository)
@@ -37,7 +37,7 @@ class GetAllCatFactsUseCaseTest(unittest.TestCase):
     def test_should_return_empty_list(self):
         # given the "all cat facts" usecase repo returning an empty list
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_facts = MagicMock(return_value=[])
+        cat_fact_repository.get_all_cat_facts = MagicMock(return_value=[])
 
         # when calling usecase
         get_all_cat_facts_usecase: GetAllCatFactsUseCase = GetAllCatFactsUseCase(cat_fact_repository)
@@ -49,7 +49,7 @@ class GetAllCatFactsUseCaseTest(unittest.TestCase):
     def test_should_return_list(self):
         # given the "all cat facts" usecase repo returning a list of 2 entities
         cat_fact_repository = CatFactsRepository(None, "")
-        cat_fact_repository.get_cat_facts = MagicMock(return_value=[CatFactEntity("fact1", 1), CatFactEntity("fact2", 2)])
+        cat_fact_repository.get_all_cat_facts = MagicMock(return_value=[CatFactEntity("fact1", 1), CatFactEntity("fact2", 2)])
 
         # when calling usecase
         get_all_cat_facts_usecase: GetAllCatFactsUseCase = GetAllCatFactsUseCase(cat_fact_repository)

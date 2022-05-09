@@ -1,5 +1,5 @@
 import typing
-from src.adapter.spi.http.http import HttpConnection
+from src.adapter.spi.http.http_connection import HttpConnection
 from src.adapter.spi.http.mappers import CatFactHttpMapper
 from src.application.repositories.cat_facts_repository_abstract import CatFactsRepositoryAbstract
 from src.domain.api_exception import ApiException
@@ -23,7 +23,7 @@ class CatFactsRepository(CatFactsRepositoryAbstract):
 
         return self.mapper.to_entity(res_json)
 
-    def get_cat_facts(self) -> typing.List[CatFactEntity]:
+    def get_all_cat_facts(self) -> typing.List[CatFactEntity]:
         res = self.http_connection.get("{}/facts".format(self.source))
         if not res.ok:
             raise ApiException("couldn't retrieve cat facts")
