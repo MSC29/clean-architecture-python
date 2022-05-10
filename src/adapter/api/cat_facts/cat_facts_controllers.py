@@ -2,8 +2,8 @@ import typing
 from fastapi import APIRouter
 from fastapi_injector import Injected
 
-from src.adapter.api.cat_facts.mapper import CatFactPresenterMapper
-from src.adapter.api.cat_facts.presenter import CatFactPresenter
+from src.adapter.api.cat_facts.cat_facts_mappers import CatFactPresenterMapper
+from src.adapter.api.cat_facts.cat_facts_presenters import CatFactPresenter
 from src.adapter.api.shared.api_error_handling import ApiErrorHandling
 from src.adapter.spi.repositories_factory import RepositoriesFactory
 

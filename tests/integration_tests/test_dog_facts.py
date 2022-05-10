@@ -1,6 +1,6 @@
 import pytest
 
-from src.adapter.api.dog_facts.presenter import DogFactPresenter
+from src.adapter.api.dog_facts.dog_facts_presenters import DogFactPresenter
 from tests.integration_tests.request_utils import RequestsUtils
 from tests.integration_tests.response_utils import ResponseUtils
 

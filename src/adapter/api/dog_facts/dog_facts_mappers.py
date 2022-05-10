@@ -1,5 +1,5 @@
 from typing import Any
-from src.adapter.api.dog_facts.presenter import DogFactPresenter
+from src.adapter.api.dog_facts.dog_facts_presenters import DogFactPresenter
 from src.application.mappers.api_mapper import ApiMapper
 from src.domain.dog_fact import DogFactEntity
 

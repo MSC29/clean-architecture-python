@@ -1,5 +1,5 @@
 from typing import Any
-from src.adapter.api.cat_facts.presenter import CatFactPresenter
+from src.adapter.api.cat_facts.cat_facts_presenters import CatFactPresenter
 from src.application.mappers.api_mapper import ApiMapper
 from src.domain.cat_fact import CatFactEntity
 
