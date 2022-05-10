@@ -11,6 +11,6 @@ class GetAllCatFactsUseCase(UseCaseMultipleEntities):
 
     def execute(self) -> typing.Iterable[CatFactEntity]:
         try:
-            return self.repo.get_cat_facts()
+            return self.repo.get_all_cat_facts()
         except Exception as exception:
             raise ErrorHandlingUtils.application_error("Cannot get all cat facts", exception)

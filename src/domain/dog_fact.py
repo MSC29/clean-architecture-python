@@ -5,4 +5,4 @@ class DogFactEntity(BaseEntity):
     def __init__(self, fact_id: int, fact: str) -> None:
         super().__init__()
         self.fact_id = fact_id
-        self.fact = fact
+        self.fact_txt = fact

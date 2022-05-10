@@ -2,8 +2,8 @@ import typing
 from fastapi import APIRouter
 from fastapi_injector import Injected
 
-from src.adapter.api.dog_facts.mapper import DogFactPresenterMapper
-from src.adapter.api.dog_facts.presenter import DogFactPresenter
+from src.adapter.api.dog_facts.dog_facts_mappers import DogFactPresenterMapper
+from src.adapter.api.dog_facts.dog_facts_presenters import DogFactPresenter
 from src.adapter.api.shared.api_error_handling import ApiErrorHandling
 from src.adapter.spi.repositories_factory import RepositoriesFactory
 from src.application.repositories.dog_facts_repository_abstract import DogFactsRepositoryAbstract

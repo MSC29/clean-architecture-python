@@ -1,6 +1,6 @@
 import pytest
 
-from src.adapter.api.dog_facts.presenter import DogFactPresenter
+from src.adapter.api.dog_facts.dog_facts_presenters import DogFactPresenter
 from tests.integration_tests.request_utils import RequestsUtils
 from tests.integration_tests.response_utils import ResponseUtils
 
@@ -21,7 +21,7 @@ class TestDogFacts:
         data: list[DogFactPresenter] = ResponseUtils.ok_and_parse(response)
 
         assert len(data) == 3
-        assert data[0].txt == "test fact 1"
+        assert data[0].txt == "Forty-five percent of U.S. dogs sleep in their owner's bed"
         assert data[0].fact_id == 1
 
     @pytest.mark.usefixtures("setup_db")
@@ -34,5 +34,5 @@ class TestDogFacts:
 
         # then expect 1 result (id 2 inserted in db)
         data: DogFactPresenter = ResponseUtils.ok_and_parse(response)
-        assert data.txt == "test fact 2"
+        assert data.txt == "Seventy percent of people sign their dog's name on their holiday cards"
         assert data.fact_id == 2

@@ -1,7 +1,7 @@
-from src.adapter.spi.db.db import DbConnection
+from src.adapter.spi.db.db_connection import DbConnection
 from src.adapter.spi.db.dog_fact_repository import DogFactRepository
 from src.adapter.spi.http.cat_fact_repository import CatFactsRepository
-from src.adapter.spi.http.http import HttpConnection
+from src.adapter.spi.http.http_connection import HttpConnection
 from src.domain.configuration_entity import ConfigurationEntity
 
 

@@ -1,6 +1,6 @@
 import vcr
 
-from src.adapter.api.cat_facts.presenter import CatFactPresenter
+from src.adapter.api.cat_facts.cat_facts_presenters import CatFactPresenter
 from tests.integration_tests.request_utils import RequestsUtils
 from tests.integration_tests.response_utils import ResponseUtils
 
