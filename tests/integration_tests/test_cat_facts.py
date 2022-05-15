@@ -25,7 +25,7 @@ class TestCatFacts:
         assert data[0].nb_chars == 91
 
     @vcr.use_cassette('tests/integration_tests/fixtures/vcr_cassettes/cat_facts_fact.yaml')
-    def test_should_return_one_results_only(self):
+    def test_should_return_one_result_only(self):
         # given the "random cat fact" route
         url = "{}random".format(TestCatFacts.CAT_URL)
 

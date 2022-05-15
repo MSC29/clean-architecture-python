@@ -6,11 +6,11 @@ from src.domain.dog_fact import DogFactEntity
 
 
 class GetAllDogFactsUseCase(UseCaseMultipleEntities):
-    def __init__(self, repo: DogFactsRepositoryAbstract) -> None:
-        self.repo = repo
+    def __init__(self, repository: DogFactsRepositoryAbstract) -> None:
+        self.repository = repository
 
     def execute(self) -> typing.Iterable[DogFactEntity]:
         try:
-            return self.repo.get_all_dog_facts()
+            return self.repository.get_all_dog_facts()
         except Exception as exception:
             raise ErrorHandlingUtils.application_error("Cannot get all dog facts", exception)

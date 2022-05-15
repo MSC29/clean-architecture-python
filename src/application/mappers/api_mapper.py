@@ -14,4 +14,4 @@ class ApiMapper(ABC, Generic[Entity, Presenter, Payload]):
 
     @abstractmethod
     def to_entity(self, payload: Payload) -> Entity:
-        """Map an Payload to an Entity"""
+        """Map a Payload to an Entity"""
