@@ -8,5 +8,5 @@ class DogFactDbMapper(DbMapper):
     def to_db(self, entity: DogFactEntity) -> DbModel:
         raise Exception("not implemented")
 
-    def to_entity(self, db_obj: Any) -> DogFactEntity:
-        return DogFactEntity(db_obj[0], db_obj[1])
+    def to_entity(self, model: Any) -> DogFactEntity:
+        return DogFactEntity(model[0], model[1])

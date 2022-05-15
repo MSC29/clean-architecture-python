@@ -39,6 +39,11 @@ mypy --config-file=setup.cfg ./src
 
 # Testing
 
+Here's what done in order to mock the SPI
+
+- db: through pytest's `conftest.py`'s fixtures that execute before the tests, the database is created & the test data is added
+- http: here the "real" requests to the "real" API were recorder by `vcrpy` and they're referenced from `test/fixtures/vcr_cassettes` for each test in order to get the same request to be replayed
+
 ```bash
 ENV=test pytest
 ```

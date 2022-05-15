@@ -6,11 +6,11 @@ from src.domain.cat_fact import CatFactEntity
 
 
 class GetAllCatFactsUseCase(UseCaseMultipleEntities):
-    def __init__(self, repo: CatFactsRepositoryAbstract) -> None:
-        self.repo = repo
+    def __init__(self, repository: CatFactsRepositoryAbstract) -> None:
+        self.repository = repository
 
     def execute(self) -> typing.Iterable[CatFactEntity]:
         try:
-            return self.repo.get_all_cat_facts()
+            return self.repository.get_all_cat_facts()
         except Exception as exception:
             raise ErrorHandlingUtils.application_error("Cannot get all cat facts", exception)

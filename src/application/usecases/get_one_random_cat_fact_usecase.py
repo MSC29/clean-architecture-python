@@ -5,11 +5,11 @@ from src.domain.cat_fact import CatFactEntity
 
 
 class GetOneRandomCatFactUseCase(UseCaseOneEntity):
-    def __init__(self, repo: CatFactsRepositoryAbstract) -> None:
-        self.repo = repo
+    def __init__(self, repository: CatFactsRepositoryAbstract) -> None:
+        self.repository = repository
 
     def execute(self) -> CatFactEntity:
         try:
-            return self.repo.get_random_cat_fact()
+            return self.repository.get_random_cat_fact()
         except Exception as exception:
             raise ErrorHandlingUtils.application_error("Cannot get random cat fact", exception)

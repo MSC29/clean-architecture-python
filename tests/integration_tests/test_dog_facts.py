@@ -25,7 +25,7 @@ class TestDogFacts:
         assert data[0].fact_id == 1
 
     @pytest.mark.usefixtures("setup_db")
-    def test_should_return_one_results_only(self):
+    def test_should_return_one_result_only(self):
         # given the "single dog facts" route
         url = "{}2".format(TestDogFacts.DOG_URL)
 

@@ -12,5 +12,5 @@ class DbMapper(ABC, Generic[Entity, DbModel]):
         """Map an Entity to a DbModel"""
 
     @abstractmethod
-    def to_entity(self, db_obj: DbModel) -> Entity:
+    def to_entity(self, model: DbModel) -> Entity:
         """Map a DbModel to an Entity"""

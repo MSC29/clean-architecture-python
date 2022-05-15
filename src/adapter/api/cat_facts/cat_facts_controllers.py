@@ -17,10 +17,12 @@ router = APIRouter()
 @router.get("/")
 async def get_all_cat_facts(factory: RepositoriesFactory = Injected(RepositoriesFactory)):
     try:
-        cat_fact_repository: CatFactsRepositoryAbstract = factory.get_repository("cat_fact_repository")
+        cat_fact_repository: CatFactsRepositoryAbstract = factory.get_repository(
+            "cat_fact_repository")
         cat_fact_presenter_mapper: CatFactPresenterMapper = CatFactPresenterMapper()
 
-        get_all_cat_facts_usecase: GetAllCatFactsUseCase = GetAllCatFactsUseCase(cat_fact_repository)
+        get_all_cat_facts_usecase: GetAllCatFactsUseCase = GetAllCatFactsUseCase(
+            cat_fact_repository)
         cat_facts = get_all_cat_facts_usecase.execute()
 
         facts: typing.List[CatFactPresenter] = []
@@ -35,10 +37,12 @@ async def get_all_cat_facts(factory: RepositoriesFactory = Injected(Repositories
 @router.get("/random")
 async def get_one_random_cat_fact(factory: RepositoriesFactory = Injected(RepositoriesFactory)):
     try:
-        cat_fact_repository: CatFactsRepositoryAbstract = factory.get_repository("cat_fact_repository")
+        cat_fact_repository: CatFactsRepositoryAbstract = factory.get_repository(
+            "cat_fact_repository")
         cat_fact_presenter_mapper: CatFactPresenterMapper = CatFactPresenterMapper()
 
-        get_one_random_cat_fact_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(cat_fact_repository)
+        get_one_random_cat_fact_usecase: GetOneRandomCatFactUseCase = GetOneRandomCatFactUseCase(
+            cat_fact_repository)
         cat_fact = get_one_random_cat_fact_usecase.execute()
 
         return cat_fact_presenter_mapper.to_api(cat_fact)
