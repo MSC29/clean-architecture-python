@@ -11,7 +11,7 @@ class GetOneDogFactByIdUseCaseTest(unittest.TestCase):
     def test_should_return_generic_message_when_unexpected_repo_exception(self):
         # given the "one dog fact by id" usecase repo with an unexpected exception
         dog_fact_repository = DogFactRepository(None)
-        dog_fact_repository.get_dog_fact_by_id_by_id = MagicMock(side_effect=Exception("random exception"))
+        dog_fact_repository.get_dog_fact_by_id = MagicMock(side_effect=Exception("random exception"))
 
         # when calling usecase
         get_one_dog_fact_by_id_usecase: GetOneDogFactByIdUseCase = GetOneDogFactByIdUseCase(1, dog_fact_repository)

@@ -9,6 +9,9 @@
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
+            "env": {
+                "ENV": "dev"
+            },
             "args": [
                 "main:app"
             ],

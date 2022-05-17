@@ -1,4 +1,6 @@
-import sqlite3
+from peewee import SqliteDatabase, Database
+
+from src.adapter.spi.db.db_models import DogFact
 from src.application.spi.db_interface import DbInterface
 from src.domain.api_exception import ApiException
 from src.domain.configuration_entity import ConfigurationEntity
@@ -16,16 +18,19 @@ class DbConnection(DbInterface):
                 "error initializing connection to DB: {}".format(str(error))) from error
 
     def connection(self, config: ConfigurationEntity) -> None:
-        self.con = sqlite3.connect(config.dogs_source, check_same_thread=False)
-        self.cur = self.con.cursor()
+        self.database = SqliteDatabase(config.dogs_source)
+        self.database.bind([DogFact])
+        self.database.connect()
 
     def migration(self):
         try:
-            self.cur.execute("DROP TABLE IF EXISTS dog_facts")
-            self.cur.execute(
-                "CREATE TABLE IF NOT EXISTS dog_facts (id INTEGER PRIMARY KEY AUTOINCREMENT, fact TEXT)")
-            self.cur.execute(
-                "INSERT INTO dog_facts (fact) VALUES ('a fact'), ('another fact'), ('yet another fact')")
-            self.con.commit()
+            self.database.create_tables([DogFact])
+            DogFact.truncate_table()
+            DogFact.create(id=1, fact="a first fact")
+            DogFact.create(id=2, fact="a second fact")
+            DogFact.create(id=3, fact="a third fact")
         except Exception as error:
             raise ApiException("error running migration to DB: {}".format(str(error))) from error
+
+    def get_db(self) -> Database:
+        return self.database
