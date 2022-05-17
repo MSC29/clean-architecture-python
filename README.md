@@ -4,7 +4,7 @@ A Clean Architecture template for a Rest API in python
 
 # How it works
 
-Motivations, explanations, requirements & more details in my article [Practical Clean Architecture in Typescript, Rust & Python]()
+Motivations, explanations, requirements & more details in my article [Practical Clean Architecture in Typescript, Rust & Python](https://dev.to/msc29/practical-clean-architecture-in-typescript-rust-python-3a6d)
 
 # Installing
 
@@ -48,4 +48,4 @@ ENV=test pytest
 
 # API Documentation
 
-`http://127.0.0.1:8000/docs`
+swagger: `http://127.0.0.1:8000/docs`
