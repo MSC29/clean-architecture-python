@@ -1,16 +1,14 @@
 # Clean architecture: python
 
-A Clean Archtiecture template for a Rest API in python
+A Clean Architecture template for a Rest API in python
 
 # How it works
 
-TODO: proper doc & link to Rust & TypeScript repo
-
-TODO: documenting key interfaces & classes for clearer understanding & to evidence benefits of Clean Architecture
+Motivations, explanations, requirements & more details in my article [Practical Clean Architecture in Typescript, Rust & Python]()
 
 # Installing
 
-I personnaly use [pipx](https://github.com/pypa/pipx/), [pyenv](https://github.com/pyenv/pyenv) & [pipenv](https://github.com/pypa/pipenv).
+I personally use [pipx](https://github.com/pypa/pipx/), [pyenv](https://github.com/pyenv/pyenv) & [pipenv](https://github.com/pypa/pipenv).
 
 ```bash
 pipenv install -r requirements.txt
@@ -28,7 +26,7 @@ ENV=dev python main.py
 
 # Code quality & security
 
-Used in CI/CD; using setup.cfg to centralise all the config
+Used in CI/CD; using setup.cfg to centralize all the config
 
 ```bash
 autopep8 -i -r --global-config=setup.cfg ./src

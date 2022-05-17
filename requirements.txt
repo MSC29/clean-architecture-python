@@ -6,6 +6,7 @@ fastapi-injector==0.1.2
 requests==2.27.1
 types-requests==2.27.19
 python-dotenv==0.20.0
+peewee==3.14.10
 
 # test
 vcrpy==4.1.1

@@ -1,5 +1,6 @@
 import typing
 from src.adapter.spi.db.db_connection import DbConnection
+from src.adapter.spi.db.db_models import DogFact
 from src.adapter.spi.db.mappers import DogFactDbMapper
 from src.application.repositories.dog_facts_repository_abstract import DogFactsRepositoryAbstract
 from src.domain.api_exception import ApiException
@@ -12,8 +13,7 @@ class DogFactRepository(DogFactsRepositoryAbstract):
         self.db_connection = db_connection
 
     def get_dog_fact_by_id(self, dog_fact_id: int) -> DogFactEntity:
-        self.db_connection.cur.execute("select * from dog_facts where id = ?", [dog_fact_id])
-        res = self.db_connection.cur.fetchone()
+        res = DogFact.select().where(DogFact.id == dog_fact_id).get()
 
         if not res:
             raise ApiException("couldn't retrieve Dog fact from id")
@@ -21,8 +21,7 @@ class DogFactRepository(DogFactsRepositoryAbstract):
         return self.mapper.to_entity(res)
 
     def get_all_dog_facts(self) -> typing.List[DogFactEntity]:
-        self.db_connection.cur.execute("select * from dog_facts")
-        res = self.db_connection.cur.fetchall()
+        res = DogFact.select()
 
         if not res:
             raise ApiException("couldn't retrieve Dog facts")
